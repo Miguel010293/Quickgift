@@ -21,12 +21,12 @@ font-family: 'Playball', cursive;
 
 </style>
 <div id="texto">
-<h1>ASH que lastima que no aceptó gran hp </h1>
-<h2><?php  echo $_SESSION['nombre']?></h2>
+<h1>ASH que lastima que no aceptó gran hp <?php  echo $_SESSION['nombre']?></h1>
+
 </div>
 <script type="text/javascript">
 
-setTimeout("location.href='FormInvitado.php'", 5000);
+setTimeout("location.href='FormInvitado.php'", 8000);
 </script>
 </body>
 </html>

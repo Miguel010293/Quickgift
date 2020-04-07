@@ -12,7 +12,7 @@ $insert = $conn->ddl("INSERT INTO regalo VALUES(DEFAULT,'$r->regalo','$r->imagen
 if($insert){return true;} else {return false;}
 }
 
-public static function listarRegalos(){
+public static function listarRegalosActivos(){
 
     $conn = new Conexion();
     $lista = $conn->dml("SELECT * FROM `regalo` WHERE estado = 1 ORDER BY idregalo DESC");
@@ -22,6 +22,19 @@ public static function listarRegaloSeleccionado($id){
 
     $conn = new Conexion();
     $lista = $conn->dml("SELECT * FROM regalo WHERE estado = 1 AND idregalo = $id");
+    return $lista;
+}
+
+public static function listarRegalosInactivos(){
+
+    $conn = new Conexion();
+    $lista = $conn->dml("SELECT * FROM `regalo` WHERE estado = 0 ORDER BY idregalo DESC");
+    return $lista;
+}
+public static function modificaEstado($id){
+
+    $conn = new Conexion();
+    $lista = $conn->dml("UPDATE regalo SET estado = 0 WHERE idregalo = $id ");
     return $lista;
 }
 }

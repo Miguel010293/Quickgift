@@ -1,7 +1,7 @@
 
 <?php include("header.php");
 include("../dao/DAOregalo.php");
-$resultado = DAOregalo::listarRegalos();
+$resultado = DAOregalo::listarRegalosActivos();
 ?>
 
 <form action="../controlador/controladorInvitado.php?agrega=0" method="post">

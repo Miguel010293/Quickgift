@@ -36,7 +36,7 @@ class DAOinvitado{
     $modifica = $conn->ddl("UPDATE invitacion set confirmacion = $i->confirmacion WHERE idinvitacion = $i");
   }
 
-  //---------------------------------------------------------------------------------------------------------
+  //---------------------aca se separan los metodos segun su modelo------------------------------------------------------------------------------------
 
   public static function registraPersona($p)
   {
@@ -80,6 +80,14 @@ class DAOinvitado{
     INNER JOIN regalo ON idregalo = obsequio WHERE confirmacion LIKE 'no'");
     return $noAsiste;
   }
+  //--------------------------metodos de dao regalo----------------------------------
+
+  public static function modificaEstado($id){
+
+    $conn = new Conexion();
+    $lista = $conn->dml("UPDATE regalo SET estado = 0 WHERE idregalo = $id ");
+    return $lista;
+}
 }
 
 

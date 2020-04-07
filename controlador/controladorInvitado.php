@@ -7,6 +7,7 @@ include("../dao/DAOinvitacion.php");
 
 
 
+
 if(isset($_GET['agrega'])){
 
 
@@ -33,15 +34,18 @@ if(isset($_GET['agrega'])){
       $i->obsequio = null;
     }
     $i->acompanantes = $_POST['Npersonas'];
+
     if (isset($_POST['confirmacion'])) {
       $i->confirmacion = $_POST['confirmacion'];
     } else {
       $i->confirmacion = null;
     }
     if (isset($_POST['idimagen'])) {
-      $i->obsequio = $_POST['idimagen'];
+     
+      $i->obsequio = $_POST['idimagen'];}
+      
     } else {
-      $i->obsequio = null;
+      $i->obsequio = '';
     }
     if (isset($_POST['regopcional'])) {
       $i->regopcional = $_POST['regopcional'];
@@ -51,17 +55,16 @@ if(isset($_GET['agrega'])){
 
     $insertInvi = DAOinvitado::registraInvitado($i);
 
-    if ($insertInvi) {
+   
 
-      if ($_POST['confirmacion'] = 'si') {
+      if ($_POST['confirmacion']=='si') {
+
         header("location:../vista/succes.php");
+        DAOinvitado::modificaEstado($_POST['idimagen']);
       } else {
         header("location:../vista/rechazo.php");
       }
-    } else {
-
-      header("location:../");
-    }
+    
         
      
     
@@ -73,7 +76,7 @@ if(isset($_GET['agrega'])){
   
 
    
- }
+ 
 
 
 
