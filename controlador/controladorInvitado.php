@@ -34,7 +34,12 @@ if(isset($_GET['agrega'])){
         if(isset($_POST['idimagen'])){$i->obsequio=$_POST['idimagen'];}else{ $i->obsequio= null;}
         if(isset($_POST['regopcional'])){$i->regopcional = $_POST['regopcional'];}else{$i->regopcional=null;}
            
-        $insertInvi = DAOinvitado::registraInvitado($i);
+        /*$insertInvi = DAOinvitado::registraInvitado($i);
+        if($_POST['cionfirmacion']='si'){
+
+        }else{
+
+        }*/
         if($insertInvi){
           header("location:../vista/succes.php");
 
