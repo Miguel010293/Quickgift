@@ -15,7 +15,7 @@ estado int
 create table invitacion(
 idinvitacion int primary key AUTO_INCREMENT,
 invitado int ,
-acompañantes int ,
+acompanantes int ,
 confirmacion varchar(20) ,
 obsequio int,
 fecha date,
