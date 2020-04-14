@@ -1,7 +1,8 @@
 
-<?php include("header.php");
+<?php 
+include("header.php");
 include("../dao/DAOregalo.php");
-$resultado = DAOregalo::listarRegalosActivos();
+$resultado = DAOregalo::listarRegalosActivos(); 
 ?>
 
 <form action="../controlador/controladorInvitado.php?agrega=0" method="post">
@@ -57,7 +58,7 @@ $resultado = DAOregalo::listarRegalosActivos();
                             <div class="col">
                                 <div class="form-group rounded bg-white p-2 border">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="course-radio-beginner-1" name="confirmacion" value="si" class="custom-control-input">
+                                        <input type="radio" id="course-radio-beginner-1" name="confirmacion" value="si" class="custom-control-input" >
                                         <label class="custom-control-label" for="course-radio-beginner-1">SI</label>
                                     </div>
                                 </div>
@@ -113,7 +114,7 @@ $resultado = DAOregalo::listarRegalosActivos();
                                             
                                                 <div class="m_figure_viewport">
                                                     
-                                                        
+                                                        <span><center><h4><?php echo $data[1]?></h4></center></span> <br>
                                                         <img data-id="<?php echo $data[0]?>" src="data:image/jpeg;base64,<?php echo base64_encode($data[2])?>" width="300" height="200" class="m_figure_img">
                                                         <span class="click_to_view" style="display: none;">
                                                             <i class=" fa fa-search-plus  " aria-hidden="true"></i>

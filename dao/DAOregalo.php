@@ -1,5 +1,5 @@
 <?php
-include("../config/Conexion.php");
+include("../config/Conexion.php"); 
 
 
 class DAOregalo{
@@ -11,7 +11,12 @@ $insert = $conn->ddl("INSERT INTO regalo VALUES(DEFAULT,'$r->regalo','$r->imagen
 
 if($insert){return true;} else {return false;}
 }
+public static function listarRegalos(){
 
+    $conn = new Conexion();
+    $lista = $conn->dml("SELECT * FROM `regalo` ORDER BY idregalo DESC");
+    return $lista;
+}
 public static function listarRegalosActivos(){
 
     $conn = new Conexion();

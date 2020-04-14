@@ -13,7 +13,6 @@
 
 
             $("#registro").hide();
-
             $("#addRegalo").click(function() {
                 $("#registro").show();
                 $("#addRegalo").hide();

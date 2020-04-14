@@ -66,7 +66,7 @@
 <script type="text/javascript">
 
 
-setTimeout("location.href='../'", 10000)
+setTimeout("location.href='../'", 8000)
 
 </script>
 </body>

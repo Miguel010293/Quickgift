@@ -16,10 +16,10 @@ public function __construct()
        
        $this->invitado=0;
        $this->acompanantes=0;
-       $this->confirmacion=0;
+       $this->confirmacion="";
        $this->obsequio=0;
        $this->fecha=""; 
-       $this->regopcional='';
+       $this->regopcional="";
     }
 }
 ?>

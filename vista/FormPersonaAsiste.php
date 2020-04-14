@@ -2,7 +2,7 @@
 include("adminMenu.php");
 include("headerPersona.php");
 include("../dao/DAOinvitacion.php");
-$resultado = DAOinvitado::listarPersonaAsiste();
+$resultado = DAOinvitado::consultaInvitadoConfirmado();
 ?>
 
 <div class="container">

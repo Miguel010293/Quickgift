@@ -26,7 +26,7 @@ class Conexion{
       return $contenedor->fetch_all();
   }
 
-  public function ddl($sql){
+  public  function ddl($sql){
    
      $consulta= $this->conn->query($sql);
      if($consulta){return true;}else{return false;} 

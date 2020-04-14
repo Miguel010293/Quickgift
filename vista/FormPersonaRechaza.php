@@ -2,7 +2,7 @@
 include("adminMenu.php");
 include("headerPersona.php");
 include("../dao/DAOinvitacion.php");
-$resultado = DAOinvitado::listarPersonaNoAsiste();
+$resultado = DAOinvitado::consultaInvitadoRechazo();
 ?>
 
 <div class="container">
@@ -21,10 +21,9 @@ $resultado = DAOinvitado::listarPersonaNoAsiste();
                 <tr class="filters">
 
                     <th><center><input type="text" class="form-control" placeholder="                 Nombre" disabled></center></th>
-                    <th><input type="text" class="form-control" placeholder="                  Confirmacion" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="                 Acompañantes" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="                   Regalo" disabled></th>
-                    <th><input type="text" class="form-control" placeholder="               Regalo Opcional" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="                  Telefono" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="                 Confirmacion" disabled></th>
+                  
                     
 
 
@@ -43,12 +42,7 @@ $resultado = DAOinvitado::listarPersonaNoAsiste();
                         <td>
                             <center><strong><?php echo $data[2] ?></strong></center>
                         </td>
-                        <td>
-                            <center><strong><?php echo $data[3] ?></strong></center>
-                        </td>
-                        <td>
-                            <center><strong><?php echo $data[4] ?></strong></center>
-                        </td>
+                      
 
                     </tr>
                 <?php } ?>

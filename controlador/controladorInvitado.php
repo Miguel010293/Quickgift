@@ -17,61 +17,50 @@ if(isset($_GET['agrega'])){
 
   $p->nombre = $_POST['nombre'];
   $p->telefono = $_POST['telefono'];
+  $invipers=DAOinvitado::registraPersona($p);
+  
+  
+  if($invipers){
 
-  $insertPers = DAOinvitado::registraPersona($p);
-
-  if ($insertPers) {
-
-    $resul = DAOinvitado::idpersona($p);
-
-    foreach ($resul as $data) {
-      $i->invitado = $data[0];
-    }
-
-    if (isset($_POST['idimagen'])) {
-      $i->obsequio = $_POST['idimagen'];
-    } else {
-      $i->obsequio = null;
-    }
-    $i->acompanantes = $_POST['Npersonas'];
-
-    if (isset($_POST['confirmacion'])) {
-      $i->confirmacion = $_POST['confirmacion'];
-    } else {
-      $i->confirmacion = null;
-    }
-    if (isset($_POST['idimagen'])) {
-     
-      $i->obsequio = $_POST['idimagen'];}
-      
-    } else {
-      $i->obsequio = '';
-    }
-    if (isset($_POST['regopcional'])) {
-      $i->regopcional = $_POST['regopcional'];
-    } else {
-      $i->regopcional = null;
-    }
-
-    $insertInvi = DAOinvitado::registraInvitado($i);
-
-   
-
-      if ($_POST['confirmacion']=='si') {
-
-        header("location:../vista/succes.php");
-        DAOinvitado::modificaEstado($_POST['idimagen']);
-      } else {
-        header("location:../vista/rechazo.php");
-      }
-    
+    if ($_POST['confirmacion']=='si') {
+      $resul = DAOinvitado::idpersona($p);
+      foreach ($resul as $data) {
         
-     
-    
+      }
+      $i->invitado = $data[0];
+      $i->confirmacion = $_POST['confirmacion'];
+      $i->acompanantes = $_POST['Npersonas'];
+      $i->obsequio = $_POST['idimagen'];
+      $i->regopcional = $_POST['regopcional'];
+      DAOinvitado::registraInvitado($i);
+      echo $id= $_POST['idimagen'];
+      DAOinvitado::modificaEstadoRegalo($id);
+    header("location:../vista/succes.php");
+    } elseif($_POST['confirmacion']=='no'){
+      
+      $in = new Invitacion();
+      
+      $resul = DAOinvitado::idpersona($p);
+      foreach ($resul as $data) {
+        $in= $data[0];
+      }
+      echo $data[0];
+
+      DAOinvitado::registraInvitado2($in);
+      header("location:../vista/rechazo.php");
+    }else{
+      echo "error";
     }
+  
     
-   
+      
+  }
     
+}
+  
+
+    
+
 
   
 
