@@ -1,6 +1,6 @@
 <?php
 include("../dao/DAOregalo.php");
-$resultado = DAOregalo::listarRegalosActivos();
+$resultado = DAOregalo::listarRegalos();
 ?>
 <div class="panel panel-primary filterable">
 
