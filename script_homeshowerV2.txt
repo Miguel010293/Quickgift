@@ -1,0 +1,60 @@
+CREATE DATABASE homeshower;
+USE homeshower;
+create table Rol(
+id_usu int not null primary key,
+clave varchar(50),
+estado int not null
+);
+create table persona(
+id int not null primary key AUTO_INCREMENT,
+nombre varchar(50) ,
+telefono int
+);
+create table regalo(
+idregalo int primary key not null AUTO_INCREMENT,
+regalo varchar(50) ,
+imagen longblob,
+estado int
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=0 ;
+create table invitacion(
+idinvitacion int primary key AUTO_INCREMENT,
+invitado int ,
+acompanantes int ,
+confirmacion varchar(20) ,
+obsequio int,
+fecha date,
+regopcional varchar(100),
+FOREIGN KEY(invitado) REFERENCES persona(id),
+FOREIGN KEY(obsequio) REFERENCES regalo(idregalo)
+);
+
+SQL-----------------------------------------------------------------------------------------------------------------------------
+
+DDL
+INSERT INTO `invitacion`(`idinvitacion`, `invitado`, `acompanantes`, `confirmacion`, `obsequio`, `fecha`, `regopcional`)
+ VALUES (default,$i->invitado,$i->acompanantes,'$i->confirmacion',$i->obsequio,'2020-04-25','$i->regopcional');
+UPDATE invitacion set confirmacion = $i->confirmacion WHERE idinvitacion = $i;
+INSERT INTO persona values(default,'$p->nombre',$p->telefono);
+UPDATE regalo SET estado = 0 WHERE idregalo = $id ;
+
+
+DML
+
+SELECT * FROM invitacion WHERE idinvitacion=$id;
+SELECT * FROM invitacion WHERE confirmacion = 1;
+SELECT * FROM invitacion WHERE confirmacion = 0;
+SELECT id FROM persona WHERE nombre = '$p->nombre' AND telefono = $p->telefono;
+
+
+INNER JOIN
+SELECT nombre , confirmacion, acompanantes,regalo,regopcional FROM
+    persona INNER JOIN invitacion ON persona.id = invitacion.invitado
+    INNER JOIN regalo ON idregalo = obsequio;
+
+SELECT nombre , confirmacion, acompanantes,regalo,regopcional FROM
+    persona INNER JOIN invitacion ON persona.id = invitacion.invitado
+    INNER JOIN regalo ON idregalo = obsequio WHERE confirmacion LIKE 'si';
+
+SELECT nombre , confirmacion, acompanantes,regalo,regopcional FROM
+    persona INNER JOIN invitacion ON persona.id = invitacion.invitado
+    INNER JOIN regalo ON idregalo = obsequio WHERE confirmacion LIKE 'no';
