@@ -1,0 +1,28 @@
+CREATE DATABASE homeshower;
+USE homeshower;
+
+create table persona(
+id int not null primary key AUTO_INCREMENT,
+nombre varchar(50) ,
+telefono int,
+usuario varchar(50),
+clave varchar(50)
+);
+create table regalo(
+idregalo int primary key not null AUTO_INCREMENT,
+regalo varchar(50) ,
+imagen longblob,
+estado int
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=0 ;
+create table invitacion(
+idinvitacion int primary key AUTO_INCREMENT,
+invitado int ,
+acompanantes int ,
+confirmacion varchar(20) ,
+obsequio int,
+fecha date,
+regopcional varchar(100),
+FOREIGN KEY(invitado) REFERENCES persona(id),
+FOREIGN KEY(obsequio) REFERENCES regalo(idregalo)
+);
+
