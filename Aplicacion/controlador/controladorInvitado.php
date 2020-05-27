@@ -19,7 +19,7 @@ if(isset($_GET['agrega'])){
   $p->telefono = $_POST['telefono'];
   $invipers=DAOinvitado::registraPersona($p);
   
-  
+  /*---------Punto critico----------------------------------------------------*/
   if($invipers){
 
     if ($_POST['confirmacion']=='si') {
@@ -28,7 +28,7 @@ if(isset($_GET['agrega'])){
         
       }
       $i->invitado = $data[0];
-      $i->confirmacion = $_POST['confirmacion'];
+      $i->confirmacion = $_POST['confirmacion']; 
       $i->acompanantes = $_POST['Npersonas'];
       $i->obsequio = $_POST['idimagen'];
       $i->regopcional = $_POST['regopcional'];
@@ -36,6 +36,7 @@ if(isset($_GET['agrega'])){
       echo $id= $_POST['idimagen'];
       DAOinvitado::modificaEstadoRegalo($id);
     header("location:../vista/succes.php");
+
     } elseif($_POST['confirmacion']=='no'){
       
       $in = new Invitacion();
@@ -49,7 +50,11 @@ if(isset($_GET['agrega'])){
       DAOinvitado::registraInvitado2($in);
       header("location:../vista/rechazo.php");
     }else{
-      echo "error";
+      echo "<script>
+      
+      alert('Debe confirmar la asitencia dando click en SI o NO, porfavor intentelo de nuevo');
+      window.location= '../vista/FormInvitado.php';
+      </script>";
     }
   
     
