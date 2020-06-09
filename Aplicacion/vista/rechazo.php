@@ -1,76 +1,156 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>login - Bootsnipp.com</title>
+    <title>Rechazo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../IMG/estilo.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playball&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
-        body {
-  background-image: linear-gradient(to left top, #ccdef3, #b5d1f1, #7fbbf3, #4685d6, #4788d3);
-  height: 100vh;
+        *{
+  box-sizing:border-box;
+ /* outline:1px solid ;*/
 }
-#login .container #login-row #login-column .login-box {
-  margin-top: 120px;
-  max-width: 1000px;
-  height: 420px;
-  border: 1px solid #9C9C9C;
-  background-image: linear-gradient(to bottom, #d2e3f1, #d1dff0, #acd0f1, #b6c0c9, #afc6e0);
+body{
+background: #ffffff;
+background: linear-gradient(to bottom, #ffffff 0%,#e1e8ed 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e8ed',GradientType=0 );
+    height: 100%;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+  
 }
-#login .container #login-row #login-column .login-box #login-form {
-  padding: 20px;
-}
-#login .container #login-row #login-column .login-box #login-form #register-link {
-  margin-top: -85px;
-}
-#pruebatexto{
 
-    font-family: 'Playball', cursive;
+.wrapper-1{
+  width:100%;
+  height:100vh;
+  display: flex;
+flex-direction: column;
+}
+.wrapper-2{
+  padding :30px;
+  text-align:center;
+}
+h1{
+    font-family: 'Kaushan Script', cursive;
+  font-size:4em;
+  letter-spacing:3px;
+    color: #008CBA;
+  margin:0;
+  margin-bottom:20px;
+}
+.wrapper-2 h4 {
+    margin: 0;
+    font-size: 1.3em;
+    margin-bottom: 14px;
+    color: #3e3e3e;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1px;
+}
+.wrapper-2 p {
+    margin: 0;
+    color: #5f5f5f;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+.go-home{
+  color:#fff;
+  background: #008CBA;
+  border:none;
+  padding:10px 50px;
+  margin:30px 0;
+  border-radius:30px;
+  text-transform:capitalize;
+  box-shadow: 0 10px 16px 1px rgba(174, 199, 251, 1);
+}
+.footer-like{
+  margin-top: auto; 
+  background:#D7E6FE;
+    background: #dadada;
+  padding:6px;
+  text-align:center;
+}
+.footer-like p{
+  margin:0;
+  padding:4px;
+  color:#5892FF;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing:1px;
+}
+.footer-like p a{
+  text-decoration:none;
+  color:#5892FF;
+  font-weight:600;
+}
+
+@media (min-width:360px){
+  h1{
+    font-size:4.5em;
+  }
+  .go-home{
+    margin-bottom:20px;
+  }
+}
+
+@media (min-width:600px){
+  .content{
+  max-width:1000px;
+  margin:0 auto;
+}
+  .wrapper-1{
+  height: initial;
+  max-width:620px;
+  margin:0 auto;
+  margin-top:100px;
+  box-shadow: 4px 8px 40px 8px rgba(88, 146, 255, 0.2);
+}
+  
 }
     </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Rechazo</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
 <body>
-	<div id="login">
-    <h3 class="text-center text-white pt-5">HOME SHOWER</h3>
-    <div class="container">
-        <div id="login-row" class="row justify-content-center align-items-center">
-            <div id="login-column" class="col-md-6">
-                <div class="login-box col-md-12">
-                    <form id="login-form" class="form" action="" method="post">
-                        
-                       <div id="pruebatexto">
-                         <h2><br> <br> Hola <?php
-                         session_start();
-    
-           echo $_SESSION['nombre'];
-        ?> Sentimos mucho no poder contar con tu asistencia, muchas gracias por responder!</h2> 
-                       <br>
-                       
-                       <h3>Que tengas un lindo dia!</h3>
-                        </div>
-                        
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+
+<div class=content>
+  <div class="wrapper-1">
+    <div class="wrapper-2">
+      <h1>Que lastima !
+      <?php 
+      session_start();
+      echo $_SESSION['nombre'];
+      ?>
+     </h1>
+      <h4>Sentimos mucho no poder contar con tu asistencia, muchas gracias por responder!</h4>
+      <p>Que tengas un lindo dia!</p>
+       
+      <button class="go-home">
+      Finalizar
+      </button>
     </div>
 </div>
+</div>
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro" rel="stylesheet">
+<!-- partial -->
+  
 </body>
+</html>
 <script type="text/javascript">
-
-
-setTimeout("location.href='../'", 8000)
+setTimeout("location.href='../'", 8000);
 
 </script>
 </body>
 </html>
-
-<
