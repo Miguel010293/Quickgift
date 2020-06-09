@@ -1,10 +1,24 @@
+<?php
+session_start();
+error_reporting(0);
+$adminsesion =$_SESSION['admin']; 
+if($adminsesion== '' && $adminsesion== null ){
+ 
+	echo "<script>
+	alert('Lo sentimos debe inciar sesión para ver esta pagina');
+	window.location='adminLogin.php';
+	</script>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
 	<!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-	<title>ADMIN PAGE</title>
+	<title>Modulo Anfitrión</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
@@ -22,10 +36,10 @@
 					<span class="icon-bar"></span>
 				</a>
 				<br>
-				<a class="brand" href="#" name="top">HOME SHOWER</a>
+				<a class="brand" href="adminMenu.php" name="top">QuickGift</a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
-						<li><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
+						<li><a href="adminMenu.php"><i class="icon-home icon-white"></i>Inicio</a></li>
 						<li class="divider-vertical"></li>
 						<li><a href="FormPersona.php"><i class="icon-user icon-white"></i>Personas</a></li>
 						<li class="divider-vertical"></li>
@@ -37,13 +51,12 @@
 						<li class="divider-vertical"></li>
 					</ul>
 					<div class="btn-group pull-right divider-vertical  ">
-						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-							<i class="icon-user"></i> admin <span class="caret"></span>
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="../config/cerrar.php">
+							<i ></i> Cerrar sesión <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="#"><i class="icon-wrench"></i> Settings</a></li>
-							<li class="divider"></li>
-							<li><a href="#"><i class="icon-share"></i> Logout</a></li>
+							
+							
 						</ul>
 					</div>
 				</div>

@@ -54,7 +54,7 @@ class DAOinvitado{
   public static function registraPersona($p)
   {
     $conn = new Conexion();
-    $resul = $conn->ddl("INSERT INTO persona values(default,'$p->nombre',$p->telefono)");
+    $resul = $conn->ddl("INSERT INTO persona (id,nombre,telefono)values(default,'$p->nombre',$p->telefono)");
     if ($resul) {
       return true;
     } else {
