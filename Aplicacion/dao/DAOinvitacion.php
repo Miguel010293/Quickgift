@@ -92,6 +92,16 @@ class DAOinvitado{
     if($lista){return true;}else{return false;}
 }
  
+//------------------Se suman las personas que confirman y sus invitados para levar un conteo total de personas que asisten------
+
+public static function totalPersonas(){
+
+
+ $conn = new Conexion();
+ $totalP = $conn->dml("SELECT COUNT(nombre) + SUM(acompanantes) as numeroPersonas FROM persona 
+ INNER JOIN invitacion on persona.id = invitacion.invitado WHERE confirmacion LIKE 'si'");
+ return $totalP;
+} 
 
 }
 

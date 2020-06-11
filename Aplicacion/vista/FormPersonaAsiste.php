@@ -3,6 +3,7 @@ include("adminMenu.php");
 include("headerPersona.php");
 include("../dao/DAOinvitacion.php");
 $resultado = DAOinvitado::consultaInvitadoConfirmado();
+$personaTotal = DAOinvitado::totalPersonas();
 ?>
 
 <div class="container">
@@ -54,6 +55,10 @@ $resultado = DAOinvitado::consultaInvitadoConfirmado();
                 <?php } ?>
                 </tbody>
         </table>
+        <h3>Total de personas: <?php 
+                    foreach($personaTotal as $total){
+                        echo $total[0];
+                    } ?> </h3>
     </div>
 
 </div>
