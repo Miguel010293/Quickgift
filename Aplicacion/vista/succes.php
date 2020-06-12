@@ -150,7 +150,7 @@
                     <h4>Te agradecemos tu participación con nuestra plataforma ¡Te esperamos ansiosos!</h4>
                     <h3><p> Que tengas un lindo dia ♥☺!</p><h3>
 
-                    <button class="go-home">
+                    <button class="go-home" OnClick="location.href='../index.php'">
                         ♥
                     </button>
                 </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>Bootstrap 4 Free Template w/ animation and form landing page - Bootsnipp.com</title>
+    <title>Confirmación</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
@@ -69,7 +69,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Questions.home</title>
+       
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -85,3 +85,4 @@
     </head>
 
     <body>
+        

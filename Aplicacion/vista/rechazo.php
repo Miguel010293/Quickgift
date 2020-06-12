@@ -134,7 +134,7 @@ h1{
       <h4>Sentimos mucho no poder contar con tu asistencia, muchas gracias por responder!</h4>
       <p>Que tengas un lindo dia!</p>
        
-      <button class="go-home">
+      <button class="go-home" OnClick="location.href='../index.php'">
       Finalizar
       </button>
     </div>

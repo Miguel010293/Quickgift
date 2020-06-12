@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 include("../modelo/invitacion.php");
 include("../modelo/persona.php");
 include("../dao/DAOinvitacion.php");
@@ -50,7 +51,7 @@ if(isset($_GET['agrega'])){
       DAOinvitado::registraInvitado2($in);
       header("location:../vista/rechazo.php");
     }else{
-      echo "<script>
+     echo "<script>
       
       alert('Debe confirmar la asitencia dando click en SI o NO, porfavor intentelo de nuevo');
       window.location= '../vista/FormInvitado.php';

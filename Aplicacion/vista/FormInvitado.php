@@ -38,7 +38,7 @@ $resultado = DAOregalo::listarRegalosActivos();
                     <h2 class="font-weight-bold "> ¿Algun telefono para llamarte?</h2>
 
                     <div class="form-group ">
-                        <br><input name="telefono" id="course-name-1" type="text" class="form-control form-control-lg" placeholder="Escribe aquí tu respuesta">
+                        <br><input name="telefono" id="course-name-1" type="text" class="form-control form-control-lg" placeholder="Escribe aquí tu respuesta" required>
                     </div>
                 </div>
             </div>
