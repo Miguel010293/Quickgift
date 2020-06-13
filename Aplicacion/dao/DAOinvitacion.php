@@ -80,7 +80,7 @@ class DAOinvitado{
   public static function person()
   {
     $conn = new Conexion();
-    $persona = $conn->dml("SELECT * FROM persona");
+    $persona = $conn->dml("SELECT * FROM persona WHERE usuario is null");
     return $persona;
   }
   //--------------------------metodos de dao regalo----------------------------------

@@ -80,6 +80,8 @@ $resultado = DAOregalo::listarRegalosActivos();
                 <div class="col col-md-8 text-center aos-init" data-aos="fade-up" data-aos-offset="300">
                     <h2 class="font-weight-bold  "> Si respondiste SI, en la pregunta anterior, cuéntanos con cuantos más vas a venir.</h2><br>
                     <select name="Npersonas" id="Npersonas" class=" button button2 olanaklar letra box">
+                    <option value="0">Elige un numero</option>
+                    <option value="0">Nadie</option>
                         <option value="1">1 persona más</option>
                         <option value="2">2 personas más</option>
                         <option value="3">3 personas más</option>
