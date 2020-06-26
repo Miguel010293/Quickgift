@@ -36,7 +36,7 @@ if($adminsesion== '' && $adminsesion== null ){
 					<span class="icon-bar"></span>
 				</a>
 				<br>
-				<a class="brand" href="adminMenu.php" name="top">QuickGift</a>
+				<a class="brand" href="index.php" name="top">QuickGift</a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 						<li><a href="adminMenu.php"><i class="icon-home icon-white"></i>Inicio</a></li>

@@ -55,7 +55,7 @@ $personaTotal = DAOinvitado::totalPersonas();
                 <?php } ?>
                 </tbody>
         </table>
-        <h3>Total de personas: <?php 
+        <h3>Total de personas que asisten: <?php 
                     foreach($personaTotal as $total){
                         echo $total[0];
                     } ?> </h3>

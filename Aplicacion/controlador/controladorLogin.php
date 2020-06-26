@@ -19,7 +19,7 @@ if (isset($_GET['log'])) {
 
     if ($valida) {
       $_SESSION['admin']=$_POST['usuario'];
-        header("location:../vista/adminMenu.php");
+        header("location:../vista/index.php");
     } else {
       
         echo "<script>

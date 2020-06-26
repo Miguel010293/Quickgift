@@ -12,6 +12,14 @@ class DAOinvitado{
    
    if($inserta){return true;}else{return false;}
   }
+  public static function registraInvitado1($i)
+  {
+    $conn = new Conexion();
+   $inserta = $conn->ddl("INSERT INTO `invitacion`(`idinvitacion`, `invitado`, `acompanantes`, `confirmacion`, `obsequio`, `fecha`, `regopcional`)
+   VALUES (default,$i->invitado,$i->acompanantes,'$i->confirmacion',null,'2020-04-25','$i->regopcional')");
+   
+   if($inserta){return true;}else{return false;}
+  }
   public static function registraInvitado2($in)
   {
     $conn = new Conexion();
